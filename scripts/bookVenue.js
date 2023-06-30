@@ -1,4 +1,10 @@
+import footer from "../components/footer.js";
+import navbarme from "../components/navbarme.js";
+let navC=document.getElementById('navbarC');
+navC.innerHTML=navbarme();
 
+let foot=document.getElementById('foot');
+foot.innerHTML=footer();
 
 
     

@@ -1,5 +1,12 @@
 // import bookvenue from "../database/bookvenue.json";
 //Login and pop up full functionalities start
+import navbarme from "../components/navbarme.js"
+import footer from "../components/footer.js";
+let navC=document.getElementById('navbarC');
+navC.innerHTML=navbarme();
+
+let foot=document.getElementById('foot');
+foot.innerHTML=footer();
 
 document.querySelector("#logo").addEventListener("click", ()=>{
     window.location.href = "index.html";
@@ -136,7 +143,10 @@ document.querySelector("#sendOTP").addEventListener("click", ()=>{
     //     searchLocation();
 
     // })
-
+ var p=document.getElementById('search')
+ p.addEventListener('keypress',()=>{
+    debouncingFunction(fetchFunction,1000);
+ })
 
     //Search Function Code 
     async function searchLocation(){
@@ -149,7 +159,7 @@ document.querySelector("#sendOTP").addEventListener("click", ()=>{
         }
 
 
-        let response = await fetch("../database/bookvenue.json");
+        let response = await fetch(`https://kind-jade-cardigan.cyclic.app/bookvenue`);
         let data = await response.json();
         console.log(data);
 
@@ -215,7 +225,7 @@ document.querySelector("#sendOTP").addEventListener("click", ()=>{
         document.querySelector("#show-results-div").style.visibility='visible'
 
         //Destructuring of objects
-        let { location, name } = el;
+        let { location, name,imgUrl } = el;
         console.log(location)
 
         //Creating Elements
@@ -224,7 +234,7 @@ document.querySelector("#sendOTP").addEventListener("click", ()=>{
         let span1 = document.createElement("span");
         let span2 = document.createElement("span");
 
-        let imgsrc = "data:image/jpeg;base64,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";
+        let imgsrc = imgUrl
 
 
         //set value to it

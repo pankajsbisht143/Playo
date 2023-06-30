@@ -1,5 +1,15 @@
+// import navbar2 from "../components/navbar2.js";
+// import navbar2 from "../components/navbar2.js";
 
+// let navbarC=document.getElementById('navbarC');
+// navbarC.innerHTML=navbar2();
+import navbarme from "../components/navbarme.js"
+import footer from "../components/footer.js";
+let navC=document.getElementById('navbarC');
+navC.innerHTML=navbarme();
 
+let foot=document.getElementById('foot');
+foot.innerHTML=footer();
 //Login and pop up full functionalities start
 
 document.querySelector("#logo").addEventListener("click", ()=>{
@@ -170,7 +180,7 @@ function displayUi(data){
         let lastDiv = document.createElement("div");
         let BookableDiv = document.createElement("div");
         let CovidDiv = document.createElement("div");
-        let safeImg = document.createElement("img");
+        // let safeImg = document.createElement("img");
         let safeDiv = document.createElement("div");
         let ratingDiv = document.createElement("div");
         let votesDiv = document.createElement("div");
@@ -181,13 +191,13 @@ function displayUi(data){
         locationDiv.textContent = location;
         playDiv.textContent = filter_by[0];
         BookableDiv.textContent = "BOOKABLE";
-        safeImg.src = iconLink;
+        // safeImg.src = iconLink;
         safeDiv.textContent = "Safe & Hygiene";
         ratingDiv.textContent = rating;
         votesDiv.textContent = `${votesCount} votes`
 
         //Append Properly
-        CovidDiv.append(safeImg, safeDiv);
+        CovidDiv.append( safeDiv);
         lastDiv.append(BookableDiv, CovidDiv);
         mainDiv.append(mainImg, nameDiv, locationDiv, playDiv, lastDiv, ratingDiv, votesDiv);
         document.querySelector("#container").append(mainDiv);
