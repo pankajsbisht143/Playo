@@ -1,4 +1,4 @@
-
+// import bookvenue from "../database/bookvenue.json";
 //Login and pop up full functionalities start
 
 document.querySelector("#logo").addEventListener("click", ()=>{
@@ -151,7 +151,7 @@ document.querySelector("#sendOTP").addEventListener("click", ()=>{
 
         let response = await fetch("../database/bookvenue.json");
         let data = await response.json();
-        //console.log(data);
+        console.log(data);
 
         //Writing Function for filter data based on search results
 
@@ -255,7 +255,7 @@ document.querySelector("#sendOTP").addEventListener("click", ()=>{
     inputTag.addEventListener("keypress", (event)=>{
         //console.log("Test");
         if(event.key == "Enter"){
-        window.location.href = "venueDetails.html";
+        location.href = "./venueDetails.html";
         localStorage.setItem("venueDetails", JSON.stringify(data))
         }
     })
