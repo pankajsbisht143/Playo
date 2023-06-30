@@ -8,14 +8,14 @@ function footer()
     <div id="infooter">
         <div id="div1">
             <div id="weblogo">
-                <a href="index.html"><img src="https://playo.co/_next/image?url=https%3A%2F%2Fplayo-website.gumlet.io%2Fplayo-website-v2%2FLogo%2Bwith%2BTrademark_Filled.png%3Fq%3D20%26format%3Dauto&w=1920&q=75" alt="logo" width="100%" height="100%"></a>
+                <a href="index.html"><img src="./images/logofooter.png" alt="logo" width="100%" height="100%"></a>
             </div>
             <div id="playstore">
                 <a href="https://play.google.com/store/apps/details?id=com.techmash.playo">
-                    <img id="playstore2" src="https://playo.co/_next/image?url=https%3A%2F%2Fplayo-website.gumlet.io%2Fplayo-website-v2%2Fstatic_pages%2FPlay%2Bstore.png&w=1920&q=75 " >
+                    <img id="playstore2" src="./images/googleplay.png" >
                 </a>
                 <a href="https://apps.apple.com/us/app/playo-local-sports-community/id1018786950?ls=1">
-                    <img id="playstore3" src="https://playo.co/_next/image?url=https%3A%2F%2Fplayo-website.gumlet.io%2Fplayo-website-v2%2Fstatic_pages%2Fapple-padding-2x.png&w=1920&q=75" >
+                    <img id="playstore3" src="./images/appleplay.png" >
                 </a>
             </div>
             <div id="copyright">
