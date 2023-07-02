@@ -214,7 +214,139 @@ function displayUi(data){
     })
 }
 
+let showDiv = document.querySelector("#show-results-div");
+document.getElementById('search').addEventListener('keypress',()=>{
+    debouncingFunction(fetchFunction,1000);
+ })
+ async function searchLocation(){
+    //Getting the value again
+    var search_value = document.getElementById('inpert').value;
 
+
+    if(search_value.length <= 2 || search_value == ""){
+        return false;
+    }
+
+
+    let response = await fetch(`https://kind-jade-cardigan.cyclic.app/bookvenue`);
+    let data = await response.json();
+    console.log(data);
+    displayUi(data)
+    //Writing Function for filter data based on search results
+
+    let filterData = data.filter((el)=>{
+        let regex = new RegExp(`^${search_value}`, "gi" );
+        return el.location.match(regex) || el.name.match(regex);
+    })
+
+    console.log(filterData);
+   apprndData(filterData)
+}
+
+
+//===========================================================================>
+
+let id;
+
+//Creating Debouncing Function
+function debouncingFunction(fetchFunction , delay){
+
+if(document.getElementById('inpert').value.length == 0){
+    document.querySelector("#show-results-div").style.visibility='hidden'
+}
+
+if(id){
+    clearTimeout(id);
+}
+
+id = setTimeout(()=>{
+    fetchFunction()
+
+}, delay)
+
+}
+
+//Creating fetch Function
+async function fetchFunction(){
+  
+
+searchLocation();
+
+}
+
+
+
+
+//Append Data Function 
+// function apprndData(data){
+
+
+
+
+// document.querySelector("#show-results-div").innerHTML = "";
+
+
+
+// if(data.length >= 1){
+// //Map Data
+// data.map((el)=>{
+    
+//     document.querySelector("#show-results-div").style.visibility='visible'
+
+//     //Destructuring of objects
+//     let { location, name,imgUrl } = el;
+//     console.log(location)
+
+//     //Creating Elements
+//     let mainDiv = document.createElement("div");
+//     let img = document.createElement("img");
+//     let span1 = document.createElement("span");
+//     let span2 = document.createElement("span");
+
+//     let imgsrc = imgUrl
+
+
+//     //set value to it
+//     img.src = imgsrc;
+//     span1.textContent = location;
+//     span2.textContent = name;
+
+//     //Append data 
+//     mainDiv.append(img, span1, span2)
+//     document.querySelector("#show-results-div").append(mainDiv);
+
+//     mainDiv.addEventListener("click", ()=>{
+      
+//         window.location.href = "venueDetail.html";
+
+//         let arr = [];
+//         arr.push(el);
+//         localStorage.setItem("venueDetails", JSON.stringify(arr));
+//     })
+
+
+
+   
+    
+
+// })
+
+// document.getElementById('search').addEventListener("keypress", (event)=>{
+//     //console.log("Test");
+//     if(event.key == "Enter"){
+//     location.href = "./venueDetails.html";
+//     localStorage.setItem("venueDetails", JSON.stringify(data))
+//     }
+// })
+
+
+// }
+
+
+
+
+
+// }
 
 
 //Codr for filter function 

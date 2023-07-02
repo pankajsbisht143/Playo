@@ -5,7 +5,42 @@
         padding: 0px;
         box-sizing: border-box;
     }
-
+    #banner1{
+        align-items: center;
+    }
+    #inpert{
+        width: 70%;
+        height: 20px;
+        border: none;
+    }
+    #banner1{
+        /* border: 1px solid black; */
+        display: flex;
+        gap: 5px;
+        width: 80%;
+    }
+    #show-results-div{
+        max-height: 260px;
+        background-color: #FFFFFF;
+        width: 50%;
+        margin: auto;
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 2px 2px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+        border-bottom-left-radius: 2px;
+        border-bottom-right-radius: 2px;
+        overflow: scroll;
+        visibility: hidden;
+       
+    }
+    textarea:focus,#inpert:focus{
+        outline: none;
+    }
+    #inputlocation{
+        border: 2px solid rgb(230, 230, 230);
+        padding: 10px;
+        border-radius: 10px;
+        width: 80%;
+        height: 40px;
+    }
     #navbar{
         height: 66px;
         background-color: white;
@@ -386,6 +421,8 @@
     .banner > div:nth-child(2)>img{
         height: 20px;
         width: 80px;
+
+        
     }
 
     
